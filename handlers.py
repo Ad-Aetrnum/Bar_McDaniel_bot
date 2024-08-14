@@ -20,3 +20,28 @@ async def menu(msg: Message):
 @router.callback_query(F.data == "beer")
 async def text_of_beer(callback: types.CallbackQuery):
     await callback.message.answer(text.beer)
+
+@router.callback_query(F.data == "whisky")
+async def text_of_whisky(callback: types.CallbackQuery):
+    await callback.message.answer(text.whisky)
+
+@router.callback_query(F.data == "gin")
+async def text_of_gin(callback: types.CallbackQuery):
+    await callback.message.answer(text.gin)
+
+@router.callback_query(F.data == "vodka")
+async def text_of_vodka(callback: types.CallbackQuery):
+    await callback.message.answer(text.vodka)
+
+@router.callback_query(F.data == "tequila")
+async def text_of_tequila(callback: types.CallbackQuery):
+    await callback.message.answer(text.tequila)
+
+@router.callback_query(F.data == "rum")
+async def text_of_rum(callback: types.CallbackQuery):
+    await callback.message.answer(text.rum)
+
+@router.callback_query(F.data == "search")
+async def text_of_search(callback: types.CallbackQuery):
+    await callback.message.answer(text.search)
+
