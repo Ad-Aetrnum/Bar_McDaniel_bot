@@ -15,4 +15,8 @@ async def start_handler(msg: Message):
 @router.message(F.text == "Выйти в меню")
 @router.message(F.text == "◀️ Выйти в меню")
 async def menu(msg: Message):
-    await msg.answer(text.menu, reply_markup=kb.menu)\
+    await msg.answer(text.menu, reply_markup=kb.menu)
+
+@router.callback_query(F.data == "beer")
+async def text_of_beer(callback: types.CallbackQuery):
+    await callback.message.answer(text.beer)
