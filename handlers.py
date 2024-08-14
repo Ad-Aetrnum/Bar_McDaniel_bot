@@ -17,9 +17,16 @@ async def start_handler(msg: Message):
 async def menu(msg: Message):
     await msg.answer(text.menu, reply_markup=kb.menu)
 
+
 @router.callback_query(F.data == "beer")
 async def text_of_beer(callback: types.CallbackQuery):
-    await callback.message.answer(text.beer)
+    await callback.message.answer(text.beer, reply_markup=kb.beer_menu)
+
+@router.callback_query(F.data == "stout")
+async def text_of_stout(callback: types.CallbackQuery):
+    await callback.message.answer(text.stout, reply_markup=kb.stout_menu)
+
+
 
 @router.callback_query(F.data == "whisky")
 async def text_of_whisky(callback: types.CallbackQuery):
