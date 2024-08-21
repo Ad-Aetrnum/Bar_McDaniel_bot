@@ -29,8 +29,24 @@ async def text_of_stout(callback: types.CallbackQuery):
     await callback.message.answer(text.stout, reply_markup=kb.stout_menu)
 
 @router.callback_query(F.data == "ale")
-async def text_of_stout(callback: types.CallbackQuery):
+async def text_of_ale(callback: types.CallbackQuery):
     await callback.message.answer(text.ale, reply_markup=kb.ale_menu)
+
+@router.callback_query(F.data == "lager")
+async def text_of_lager(callback: types.CallbackQuery):
+    await callback.message.answer(text.lager, reply_markup=kb.lager_menu)
+
+@router.callback_query(F.data == "ipa")
+async def text_of_ipa(callback: types.CallbackQuery):
+    await callback.message.answer(text.ipa, reply_markup=kb.ipa_menu)
+
+@router.callback_query(F.data == "weisse")
+async def text_of_weisse(callback: types.CallbackQuery):
+    await callback.message.answer(text.ipa, reply_markup=kb.weisse_menu)
+
+@router.callback_query(F.data == "cidre")
+async def text_of_stout(callback: types.CallbackQuery):
+    await callback.message.answer(text.cidre, reply_markup=kb.cidre_menu)
 
 
 
