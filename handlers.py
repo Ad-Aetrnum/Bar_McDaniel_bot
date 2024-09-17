@@ -4,6 +4,7 @@ from aiogram.types import Message
 
 import kb
 import text
+import utils
 
 router = Router()
 
@@ -47,9 +48,15 @@ async def text_of_weisse(callback: types.CallbackQuery):
 @router.callback_query(F.data == "cidre")
 async def text_of_stout(callback: types.CallbackQuery):
     await callback.message.answer(text.cidre, reply_markup=kb.cidre_menu)
+####################
+
+@router.callback_query(F.data == "guinness")
+async def text_guinness(callback: types.CallbackQuery):
+    await callback.message.answer(utils.guinness_info)
 
 
 
+########################
 @router.callback_query(F.data == "whisky")
 async def text_of_whisky(callback: types.CallbackQuery):
     await callback.message.answer(text.whisky)
