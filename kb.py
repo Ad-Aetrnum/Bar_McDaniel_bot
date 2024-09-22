@@ -102,3 +102,10 @@ cidre_menu = [
 ]
 
 cidre_menu = InlineKeyboardMarkup(inline_keyboard=cidre_menu)
+
+detail_menu = [
+    [InlineKeyboardButton(text="Подробнее", callback_data="detail")],
+    [InlineKeyboardButton(text="Назад", callback_data="beer_menu")],
+]
+
+detail_menu = InlineKeyboardMarkup(inline_keyboard=detail_menu)

@@ -52,8 +52,8 @@ async def text_of_stout(callback: types.CallbackQuery):
 
 @router.callback_query(F.data == "guinness")
 async def text_guinness(callback: types.CallbackQuery):
-    await callback.message.answer(utils.guinness_info)
-
+    await callback.message.answer(utils.info_beer("guinness")[0], reply_markup=kb.detail_menu)
+    
 
 
 ########################

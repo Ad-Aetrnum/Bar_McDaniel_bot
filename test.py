@@ -2,10 +2,36 @@ from openpyxl import load_workbook
 
 wb = load_workbook('bar.xlsx')
 sheet = wb.active
-sheet3 =wb['Про пиво']
-name = sheet3['A2'].value
-info = sheet3['B2'].value
-detail = sheet3['C2'].value
-print(name)
-print(info)
-print(detail)
+sheet1 =wb['Про пиво']
+name = sheet1['A2'].value
+def info_beer (name):
+    print (name)
+    if name == "guinness":
+        info = sheet1['B2'].value
+        detail = sheet1['C2'].value
+    elif name == "albion":
+        info = sheet1['B4'].value
+        detail = sheet1['C4'].value
+    elif name == "oconnor":
+        info = sheet1['B18'].value
+        detail = sheet1['C18'].value
+    elif name == "ballantine_stout":
+        info = sheet1['B3'].value
+        detail = sheet1['C3'].value
+    elif name == "nocturne":
+        info = sheet1['B7'].value
+        detail = sheet1['C7'].value
+    elif name == "eventide":
+        info = sheet1['B30'].value
+        detail = sheet1['C30'].value
+    elif name == "black_sheep":
+        info = sheet1['B25'].value
+        detail = sheet1['C25'].value
+    else:
+        info = 'No info'
+        detail = 'No detail'
+    return (info, detail)
+
+
+print(info_beer('guinness')[1])
+
